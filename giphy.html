@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Giphtastic</title>
+	<meta charset="utf-8">
+	<!-- Reset -->
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<!-- Bootstrap -->
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="assets/style.css"> -->
+</head>
+<body>
+	<div id="animalButtons">
+		<button class="clickButton" data-animal="dog">Dog</button>
+		<button class="clickButton" data-animal="cat">Cat</button>
+		<button class="clickButton" data-animal="bird">Bird</button>
+		<button class="clickButton" data-animal="hamster">Hamster</button>
+		<button class="clickButton" data-animal="turtle">Turtle</button>
+		<button class="clickButton" data-animal="frog">Frog</button>
+		<button class="clickButton" data-animal="jack black">Jack Black</button>
+
+	</div>
+<br>
+	<form id="animal-form">
+		<label for="animal-input"></label>
+		<input type="text" id="animal-input" value="Add something!">
+
+		<input type="submit" id="addAnimal" value="Submit" class="btn btn-primary">
+	</form>
+
+	<div id="animals">
+
+	</div>
+
+	<!-- JQuery -->
+	<script src="https://code.jquery.com/jquery.js"></script>
+
+	<!-- Linking app.js -->
+	<script type="text/javascript" src="assets/javascript/app.js"></script>
+	<!-- Firebase Link  -->
+	<script src="https://www.gstatic.com/firebasejs/4.5.1/firebase.js"></script>
+	<script>
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyAFEGM8ojLGdw6V9Pj9WG9r7XhQrmeor6E",
+	    authDomain: "kite-21e83.firebaseapp.com",
+	    databaseURL: "https://kite-21e83.firebaseio.com",
+	    projectId: "kite-21e83",
+	    storageBucket: "",
+	    messagingSenderId: "312652518780"
+	  };
+	  firebase.initializeApp(config);
+	</script>
+
+	<!-- <script type="text/javascript">
+
+	$(".clickButton").on("click", function() {
+
+  var animal = $(this).attr("data-animal");
+  var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
+    animal + "&api_key=dc6zaTOxFJmzC&limit=10";
+
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  }).done(function(response) {
+    console.log(queryURL);
+
+    console.log(response);
+
+    var results = response.data;
+
+    for (var i = 0; i < results.length; i++) {
+
+      var animalDiv = $("<div>");
+
+      var p = $("<p>").text("Rating: " + results[i].rating);
+
+      var animalImage = $("<img>");
+
+      animalImage.attr("src", results[i].images.fixed_height.url);
+
+      animalDiv.append(p);
+      animalDiv.append(animalImage);
+
+      $("#animals").prepend(animalDiv);
+
+    }
+
+  });
+
+});
+
+
+
+$(#addAnimal).on("click", function(event) {
+
+	var a = $("<button>");
+	var inputValue = $(this).val();
+	a.addClass(clickButton);
+	a.attr("data-animal", inputValue);
+
+	$("#animalButtons").append(a);
+
+
+});
+
+
+
+
+
+</script> -->
+</body>
+</html>

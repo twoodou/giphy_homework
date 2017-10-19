@@ -1,0 +1,14 @@
+.animalDiv {
+	width: 25%;
+	float: left;
+}
+
+.animals {
+	width: 25%;
+	float: left;
+}
+
+img {
+	position: relative;
+	z-index: 1;
+}
